@@ -2,6 +2,7 @@ package htkien.awesome_input;
 
 import android.content.Context;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
@@ -51,6 +52,8 @@ public class AwesomeInputLayout extends RelativeLayout {
     private float minTextSize;
 
     private Drawable mDrawableWhiteTroke;
+    private int mAccentColor;
+    private int mTransColor;
 
     private class RotateListener extends RotateGestureDetector.SimpleOnRotateGestureListener {
         @Override
@@ -145,6 +148,9 @@ public class AwesomeInputLayout extends RelativeLayout {
 
         scaleDetector = new ScaleGestureDetector(context, new ScaleListener());
         rotateDetector = new RotateGestureDetector(context, new RotateListener());
+
+        mAccentColor = context.getResources().getColor(R.color.colorAccent);
+        mTransColor = context.getResources().getColor(android.R.color.transparent);
     }
 
     @Override
@@ -191,6 +197,8 @@ public class AwesomeInputLayout extends RelativeLayout {
             public void onFocusChange(View view, boolean b) {
                 if (b) {
                     setBackground(mDrawableWhiteTroke);
+                    mEditText.getBackground().setColorFilter(mAccentColor, PorterDuff.Mode.SRC_IN);
+
                     mButtonDelete.setVisibility(VISIBLE);
                 } else {
                     mEditText.setFocusable(false);
@@ -199,6 +207,7 @@ public class AwesomeInputLayout extends RelativeLayout {
                         deleteViewListener.onDeleteView(AwesomeInputLayout.this);
                     } else {
                         setBackground(null);
+                        mEditText.getBackground().setColorFilter(mTransColor, PorterDuff.Mode.SRC_IN);
                         mButtonDelete.setVisibility(GONE);
                     }
                 }
