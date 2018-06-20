@@ -1,12 +1,9 @@
 # Awesome-Input-Layout
 Awesome Input Layout is an android library to display layout with EditText that can be rotated, autofit, zoom, delete within the app.
 
-# Work-Time-Sheet
-Work Time Sheet
-
 [![](https://jitpack.io/v/hantrungkien/Awesome-Input-Layout.svg)](https://jitpack.io/#hantrungkien/Awesome-Input-Layout)
 
-<a><img src="./image/screenshot.jpg" width="200"></a>
+<a><img src="./image/screenshot.png" width="200"></a>
 
 ### install:
 
