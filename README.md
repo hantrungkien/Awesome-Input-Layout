@@ -35,7 +35,7 @@ Patches and new samples are encouraged, and may be submitted by forking this pro
 
 ### LICENCE
 
-    Copyright 2017 Kien Han Trung
+    Copyright 2018 Kien Han Trung
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
